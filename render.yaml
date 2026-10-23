@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: telegram-view-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: MUALIKE_API_KEY
+        sync: false
+      - key: MUALIKE_API_URL
+        value: https://mualike1s.com/api/v3
+      - key: MUALIKE_SERVICE_ID
+        value: "3284"
+      - key: VIEW_QUANTITY
+        value: "80"
+      - key: ADMIN_CHAT_ID
+        sync: false
